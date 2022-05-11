@@ -32,13 +32,14 @@ cadastroProdutos.buscarPorId(2, function(erro, produto){
 });
  */
 
-cadastroProdutos.inserir({nome: "pastel", preco:4.85},  function(err, produtos) {
+cadastroProdutos.inserir({nome: "feijão", preco:10.50},  function(err, produtoInserido) {
+    console.log("Inserindo produto...");
     if(err) {
-        console.log("Sistema esta com problemas");
         console.log(err);
     }
     else {
-        console.log(produtos);
+        console.log("Produto Inserido");
+        console.log(produtoInserido);
     }
 });
 
