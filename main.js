@@ -20,15 +20,25 @@ cadastroProdutos.listar(
     }
 );
 //3
-console.log("Fim do Listar");
 
-console.log("BuscarPorId(2): ");
+/* console.log("BuscarPorId(2): ");
 cadastroProdutos.buscarPorId(2, function(erro, produto){
     if (erro){
         console.log('Erro ' + erro);
 
     } else {
         console.log(produto)
+    }
+});
+ */
+
+cadastroProdutos.inserir({nome: "pastel", preco:4.85},  function(err, produtos) {
+    if(err) {
+        console.log("Sistema esta com problemas");
+        console.log(err);
+    }
+    else {
+        console.log(produtos);
     }
 });
 
