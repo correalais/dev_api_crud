@@ -9,7 +9,42 @@ const conexao = {
     database: 'crud_produtos'
 };
 
-function inserir(produto){
+function inserir(produto, callback){
+
+    const cliente = new Client(conexao);
+    cliente.connect();
+    const sql = "INSERT INTO produtos (nome, preco) VALUES ($1, $2)";
+    const values = [produto.nome, produto.preco];
+    cliente.query(sql, values, 
+        function (err, res) {
+            if(err) {
+               callback(err.message, undefined);
+               //console.log(err.stack)
+            }
+            else if (res.rows && res.rows.length > 0) {
+                let produtos = res.rows;
+                //console.log(produtos);
+                callback(undefined, produtos);     
+            }
+            cliente.end();
+        } 
+    )
+
+    /* cliente.query(sql, values, 
+        function (err, res) {
+            if(err) {
+               // callback(err.message, undefined);
+               console.log(err.stack)
+            }
+            else if (res.rows && res.rows.length > 0) {
+                let produtos = res.rows;
+                console.log(produtos);
+                //callback(undefined, produtos);     
+            }
+            cliente.end();
+        } */
+    
+
 }
 
 
