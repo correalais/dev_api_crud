@@ -32,7 +32,7 @@ cadastroProdutos.buscarPorId(2, function(erro, produto){
 });
  */
 
-cadastroProdutos.inserir({nome: "feijão", preco:10.50},  function(err, produtoInserido) {
+/* cadastroProdutos.inserir({nome: "feijão", preco:10.50},  function(err, produtoInserido) {
     console.log("Inserindo produto...");
     if(err) {
         console.log(err);
@@ -41,18 +41,26 @@ cadastroProdutos.inserir({nome: "feijão", preco:10.50},  function(err, produtoI
         console.log("Produto Inserido");
         console.log(produtoInserido);
     }
+}); */
+
+/* cadastroProdutos.atualizar(1, {nome: "arroz", preco:4.75}, function(err, produto) {
+    console.log("Atualizando produto...");
+    if(err) {
+        console.log(err);
+    }
+    else {
+        console.log("Produto atualizado");
+        console.log(produto);
+    };
+}); */
+
+cadastroProdutos.deletar(3,  function(err, produto) {
+    console.log("Deletando produto...");
+    if(err) {
+        console.log(err);
+    }
+    else {
+        console.log("Produto deletado");
+        console.log(produto);
+    };
 });
-
-//console.log("BuscarPorId(4): ");
-//console.log(cadastroProdutos.buscarPorId(4));
-
-//console.log("Atualizar: ");
-//console.log(cadastroProdutos.atualizar(
-//    3, {id:3, nome: "roupeiro", preco:850}
-//));
-
-//console.log("Deletar: ");
-//console.log(cadastroProdutos.deletar(1));
-
-//console.log("Listar: ");
-//console.log(cadastroProdutos.listar());
